@@ -1,0 +1,24 @@
+= form_with url: "/actors", method: :get do |f|
+  
+  .card
+    .card-body
+
+    .mb-3
+      = f.label :search, { class: "form-label"}
+      = f.text_field :search, { class: "form-control", placeholder: "Search" }
+  
+    
+    = f.submit "Search", class: "btn btn-primary"
+
+h1
+  | Actors
+#actors
+  table.table
+    thead
+      tr
+        th[scope="col"]
+          | Name
+        
+    tbody
+      - @actors.each do |actor|
+        == render 'actors/partials/actor', actor: actor
