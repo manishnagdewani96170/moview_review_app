@@ -1,0 +1,23 @@
+h1
+  | Movies
+#movies
+  table.table
+    thead
+      tr
+        th[scope="col"]
+          | Name
+        th[scope="col"]
+          | Description
+        th[scope="col"]
+          | Year    
+        th[scope="col"]
+          | Actor
+        th[scope="col"]
+          | Director
+        th[scope="col"]
+          | Filming Location
+        th[scope="col"]
+          | Country    
+    tbody
+      - @movies.each do |movie|
+        == render 'movies/partials/movie', movie: movie
