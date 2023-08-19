@@ -1,24 +1,48 @@
-# README
+# Movie Review App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Application specs:
 
-Things you may want to cover:
+- Ruby version: 3.0.1
+- Rails version: 6.1.7
+- Database: PostgreSQL
+- Testing suite: Rspec
 
-* Ruby version
+## Setting up locally
 
-* System dependencies
+Setting up the application locally isn't too hard. Just follow the steps below:
 
-* Configuration
+- **Install requirements:** [RVM](https://rvm.io/rvm/install), [PostgreSQL](http://postgresapp.com)
+- **Setup database.yml:** `cp config/database.yml.sample config/database.yml`
+- **Setup DB:** `rake db:setup`
+- **Install gems:** `bundle install`
 
-* Database creation
+## Make changes
 
-* Database initialization
+- Open the project in Sublime Text: `subl .`
+- Change what you want
+- Make a commit
 
-* How to run the test suite
+## Run server
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+    rails s
+```
 
-* Deployment instructions
 
-* ...
+### Instructions to run rake task for import ###
+
+1) For Movie
+```
+    rake import:csv_model_import[lib/assets/movies.csv,Movie]
+```
+
+2) For Review
+```
+    rake import:csv_model_import[lib/assets/reviews.csv,Review]
+```
+
+### Instructions to run rspec ###
+
+```
+    rspec
+```
